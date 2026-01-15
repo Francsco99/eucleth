@@ -10,27 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/08.jpg"
   ];
 
-  const slidesContainer = document.getElementById("slides");
+  const slides = document.getElementById("slides");
 
-  images.forEach(src => {
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
+    images.forEach(src => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.loading = "lazy";
+      const img = document.createElement("img");
+      img.src = src;
+      img.loading = "lazy";
 
-    slide.appendChild(img);
-    slidesContainer.appendChild(slide);
+      slide.appendChild(img);
+      slides.appendChild(slide);
+    });
+
+    new Swiper(".swiper", {
+      loop: true,
+      speed: 1200,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false
+      },
+      allowTouchMove: false,
+      effect: "slide"
+    });
   });
-
-  new Swiper(".swiper", {
-    loop: true,
-    speed: 1000,
-    autoplay: {
-      delay: 3500,
-      disableOnInteraction: false
-    },
-    allowTouchMove: false
-  });
-});
