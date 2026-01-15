@@ -1,0 +1,36 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const images = [
+    "assets/images/01.jpg",
+    "assets/images/02.jpg",
+    "assets/images/03.jpg",
+    "assets/images/04.jpg",
+    "assets/images/05.jpg",
+    "assets/images/06.jpg",
+    "assets/images/07.jpg",
+    "assets/images/08.jpg"
+  ];
+
+  const slidesContainer = document.getElementById("slides");
+
+  images.forEach(src => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide";
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.loading = "lazy";
+
+    slide.appendChild(img);
+    slidesContainer.appendChild(slide);
+  });
+
+  new Swiper(".swiper", {
+    loop: true,
+    speed: 1000,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false
+    },
+    allowTouchMove: false
+  });
+});
