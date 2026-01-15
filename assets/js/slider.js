@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "assets/images/05.jpg",
     "assets/images/06.jpg",
     "assets/images/07.jpg",
-    "assets/images/08.jpg"
+    "assets/images/08.jpg",
+    "assets/images/09.jpg",
+    "assets/images/10.jpg",
+    "assets/images/11.jpg"
   ];
 
   const slides = document.getElementById("slides");
